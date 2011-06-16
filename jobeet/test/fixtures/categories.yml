@@ -1,0 +1,14 @@
+# data/fixtures/categories.yml
+JobeetCategory:
+  design:
+    name: Design
+  programming:
+    name: Programming
+  manager:
+    name: Manager
+  administrator:
+    name: Administrator
+  astronaut:
+    name: Astronaut
+  carpenter:
+    name: Carpenter
