@@ -8,3 +8,7 @@ JobeetCategory:
     name: Manager
   administrator:
     name: Administrator
+  astronaut:
+    name: Astronaut
+  carpenter:
+    name: Carpenter
