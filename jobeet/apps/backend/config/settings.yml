@@ -22,11 +22,16 @@ test:
     etag:                   false
 #ez az a rész ahova semmit sehogyan nem lehet beírni, különben kinyiffan a file
 #kénytelen vagyok kihagyni a user autentikációt, egészen idáig tetszett a symfony
+#megoldva, csak a netbeans rendetlenkedett
 all:
+  .actions:
+    login_module:    sfGuardAuth
+    login_action:    signin
   .settings:
      csrf_secret:            e8cd670b3b6cbb1b4b8b76c68e0c53dfc9bb72eb
-     #enabled_modules: [default, sfGuardAuth, sfGuardUser]
+     enabled_modules: [default, sfGuardAuth, sfGuardUser]
      escaping_strategy:      true
      escaping_method:        ESC_SPECIALCHARS
     
      use_database:           true
+  
