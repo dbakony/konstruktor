@@ -12,6 +12,34 @@
  */
 class JobeetJob extends BaseJobeetJob
 {
+    
+    public function publish()
+    {
+      $this->setIsActivated(true);
+      $this->save();
+    }
+    
+    public function getTypeName()
+        {
+          $types = Doctrine_Core::getTable('JobeetJob')->getTypes();
+          return $this->getType() ? $types[$this->getType()] : '';
+        }
+
+    public function isExpired()
+        {
+          return $this->getDaysBeforeExpires() < 0;
+        }
+
+    public function expiresSoon()
+        {
+          return $this->getDaysBeforeExpires() < 5;
+        }
+
+    public function getDaysBeforeExpires()
+        {
+          return ceil(($this->getDateTimeObject('expires_at')->format('U') - time()) / 86400);
+        }
+    
     public function getCompanySlug()
         {
           return Jobeet::slugify($this->getCompany());
@@ -35,7 +63,10 @@ class JobeetJob extends BaseJobeetJob
           $active_days = 30;//sfConfig::get('app_active_days');
           $this->setExpiresAt(date('Y-m-d H:i:s', strtotime($this->getCreatedAt()." +".$active_days." days")));
         }
-
+        if (!$this->getToken())
+        {
+            $this->setToken(sha1($this->getEmail().rand(11111, 99999)));
+        }
         return parent::save($conn);
       }
         
