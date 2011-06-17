@@ -17,7 +17,10 @@ class jobActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-     $this->job = $this->getRoute()->getObject();
+      $this->job = $this->getRoute()->getObject();
+      
+      $this->getUser()->addJobToHistory($this->job); //meghívjuk a job letároló függvényt
+     
   
   }
 

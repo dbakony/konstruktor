@@ -42,7 +42,16 @@
           </div>
         </div>
       </div>
- 
+       <div id="job_history"> <!-- utolsó 3 meglátogatott munka-->
+          Recent viewed jobs:
+          <ul>
+            <?php foreach ($sf_user->getJobHistory() as $job): ?> 
+              <li>
+                <?php echo link_to($job->getPosition().' - '.$job->getCompany(), 'job_show_user', $job) //kiírjuk az utolsó 3 meglátogatott munkát és a link_to-val linket is teszünk rá?>
+              </li>
+            <?php endforeach ?>
+          </ul>
+        </div>
       <div id="content">
         <?php if ($sf_user->hasFlash('notice')): ?>
           <div class="flash_notice">

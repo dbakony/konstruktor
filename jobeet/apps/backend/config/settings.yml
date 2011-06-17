@@ -1,6 +1,5 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/04-Settings
-
 prod:
   .settings:
     no_script_name:         false
@@ -21,15 +20,13 @@ test:
     web_debug:              false
     no_script_name:         false
     etag:                   false
-
+#ez az a rész ahova semmit sehogyan nem lehet beírni, különben kinyiffan a file
+#kénytelen vagyok kihagyni a user autentikációt, egészen idáig tetszett a symfony
 all:
   .settings:
-    # Form security secret (CSRF protection)
-    csrf_secret:            e8cd670b3b6cbb1b4b8b76c68e0c53dfc9bb72eb
-
-    # Output escaping settings
-    escaping_strategy:      true
-    escaping_method:        ESC_SPECIALCHARS
-
-    # Enable the database manager
-    use_database:           true
+     csrf_secret:            e8cd670b3b6cbb1b4b8b76c68e0c53dfc9bb72eb
+     #enabled_modules: [default, sfGuardAuth, sfGuardUser]
+     escaping_strategy:      true
+     escaping_method:        ESC_SPECIALCHARS
+    
+     use_database:           true

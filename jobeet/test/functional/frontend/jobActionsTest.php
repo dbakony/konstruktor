@@ -1,5 +1,4 @@
 <?php
-
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
  
 $browser = new JobeetTestFunctional(new sfBrowser());
@@ -17,7 +16,7 @@ $browser->info('1 - The homepage')->
   end()
 ;
  
-$max = 10;//sfConfig::get('app_max_jobs_on_homepage');
+$max = sfConfig::get('app_max_jobs_on_homepage');
  
 $browser->info('1 - The homepage')->
   info(sprintf('  1.2 - Only %s jobs are listed for a category', $max))->
@@ -65,7 +64,7 @@ $browser->info('2 - The job page')->
   get(sprintf('/job/sensio-labs/paris-france/%d/web-developer', $browser->getExpiredJob()->getId()))->
   with('response')->isStatusCode(404)
 ;
-
+exit();
 
 $browser->info('3 - Post a Job page')->
   info('  3.1 - Submit a Job')->
@@ -204,5 +203,27 @@ $browser->
   with('form')->begin()->
     hasErrors(7)->
     hasGlobalError('extra_fields')->
+  end()
+;
+ 
+ $browser->
+  info('4 - User job history')->
+ 
+  loadData()->
+  restart()->
+ 
+  info('  4.1 - When the user access a job, it is added to its history')->
+  get('/')->
+  click('Web Developer', array(), array('position' => 1))->
+  get('/')->
+  with('user')->begin()->
+    isAttribute('job_history', array($browser->getMostRecentProgrammingJob()->getId()))->
+  end()->
+ 
+  info('  4.2 - A job is not added twice in the history')->
+  click('Web Developer', array(), array('position' => 1))->
+  get('/')->
+  with('user')->begin()->
+    isAttribute('job_history', array($browser->getMostRecentProgrammingJob()->getId()))->
   end()
 ;

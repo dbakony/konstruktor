@@ -7,12 +7,11 @@ category:
   options:  { model: JobeetCategory, type: object }
 
 job:
-  job:
   class:   sfDoctrineRouteCollection
   options:
     model:          JobeetJob
     column:         token
-    object_actions: { publish: put }
+    object_actions: { publish: PUT, extend: PUT }
   requirements:
     token: \w+
  
