@@ -17,8 +17,8 @@
           </a>
         </h1>
       </div>
-      <?php /* if ($sf_user->isAuthenticated()): */ ?> 
-      <!--ha a user hitelesített, ezt a részt kénytelen voltam kihagyni mivel a settings.yml bármilyen módosításra hibaüzenetet adott-->
+      <?php  if ($sf_user->isAuthenticated()):  ?> 
+      <!-- csak akkor tesszük ki a menüt,ha a user hitelesített -->
       <div id="menu">
         <ul>
           <li>
@@ -29,10 +29,14 @@
           </li>
           <li><?php  echo link_to('Users', 'sf_guard_user') ?></li>
           <li><?php echo link_to('Logout', 'sf_guard_signout') ?></li>  
-            
+          <li>
+              <a href="<?php echo url_for('jobeet_affiliate') ?>">
+                Affiliates - <strong><?php echo Doctrine_Core::getTable('JobeetAffiliate')->countToBeActivated() ?></strong>
+              </a>
+          </li>  
         </ul>
       </div>
-      <?php /* endif */ ?>
+      <?php  endif  ?>
         
       <div id="content">
         <?php echo $sf_content ?>

@@ -8,6 +8,19 @@ class JobeetJobTable extends Doctrine_Table
     'freelance' => 'Freelance',
   );
  
+  public function getForToken(array $parameters)
+  {
+    $affiliate = Doctrine_Core::getTable('JobeetAffiliate') ->findOneByToken($parameters['token']);
+    if (!$affiliate || !$affiliate->getIsActive())
+    { // ha a token nincs az adatbázisban, akkor 404-es hibát generálunk
+      throw new sfError404Exception(sprintf('Affiliate with token "%s" does not exist or is not activated.', $parameters['token']));
+    }
+ 
+    return $affiliate->getActiveJobs();
+
+  }
+  
+  
   public function getLatestPost()
   {
     $q = Doctrine_Query::create()->from('JobeetJob j');

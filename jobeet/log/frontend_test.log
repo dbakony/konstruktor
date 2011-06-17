@@ -2925,3 +2925,240 @@ Jun 17 14:48:12 symfony [info] {sfPHPView} Decorate content with "/home/dave/job
 Jun 17 14:48:12 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/templates/layout.php"
 Jun 17 14:48:12 symfony [info] {main} Get slot "title"
 Jun 17 14:48:12 symfony [info] {sfWebResponse} Send content (2691 o)
+Jun 17 21:05:00 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 17 21:05:00 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_job - ()
+Jun 17 21:05:00 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category - ()
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (design%)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Design, 2011-06-17 21:05:01, 2011-06-17 21:05:01, design)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (programming%)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Programming, 2011-06-17 21:05:01, 2011-06-17 21:05:01, programming)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (manager%)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Manager, 2011-06-17 21:05:01, 2011-06-17 21:05:01, manager)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (administrator%)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Administrator, 2011-06-17 21:05:01, 2011-06-17 21:05:01, administrator)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (astronaut%)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Astronaut, 2011-06-17 21:05:01, 2011-06-17 21:05:01, astronaut)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (carpenter%)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Carpenter, 2011-06-17 21:05:01, 2011-06-17 21:05:01, carpenter)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 242, Sensio Labs, Web Developer, Paris, France, expired job, Send your resume to lorem.ipsum [at] dolor.sit, 2005-12-01, job_expired, job@example.com, 2005-12-31 00:00:00, 2011-06-17 21:05:01)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 246, Harrinson's ranch, Carpenter, Illinois, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, carpenter_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:05:01)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 245, Nasa, Flight Commander, Washington, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, astronaut_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:05:01)
+Jun 17 21:05:01 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 242, full-time, Sensio Labs, sensio-labs.gif, http://www.sensiolabs.com/, Web Developer, Paris, France, [0.27Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_sensio_labs, job@example.com, 2011-07-10, 2011-06-17 21:05:01, 2011-06-17 21:05:01)
+Jun 17 21:05:02 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 241, part-time, Extreme Sensio, extreme-sensio.gif, http://www.extreme-sensio.com/, Web Designer, Paris, France, [0.44Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_extreme_sensio, job@example.com, 2011-07-10, 2011-06-17 21:05:02, 2011-06-17 21:05:02)
+Jun 17 21:05:02 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/foo/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'foo',  'sf_format' => 'xml',)
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:05:02 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:05:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (foo)
+Jun 17 21:05:02 symfony [err] {sfError404Exception} Affiliate with token "foo" does not exist or is not activated.
+Jun 17 21:05:02 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/symfony/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'symfony',  'sf_format' => 'xml',)
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:05:02 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:05:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (symfony)
+Jun 17 21:05:02 symfony [err] {sfError404Exception} Affiliate with token "symfony" does not exist or is not activated.
+Jun 17 21:05:02 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'xml',)
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:05:02 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:05:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:05:02 symfony [err] {sfError404Exception} Affiliate with token "sensio_labs" does not exist or is not activated.
+Jun 17 21:05:02 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.json with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'json',)
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:05:02 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:05:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:05:02 symfony [err] {sfError404Exception} Affiliate with token "sensio_labs" does not exist or is not activated.
+Jun 17 21:05:02 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.yaml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'yaml',)
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:05:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:05:02 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:05:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:05:02 symfony [err] {sfError404Exception} Affiliate with token "sensio_labs" does not exist or is not activated.
+Jun 17 21:06:04 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 17 21:06:04 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_job - ()
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category - ()
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (design%)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Design, 2011-06-17 21:06:05, 2011-06-17 21:06:05, design)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (programming%)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Programming, 2011-06-17 21:06:05, 2011-06-17 21:06:05, programming)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (manager%)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Manager, 2011-06-17 21:06:05, 2011-06-17 21:06:05, manager)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (administrator%)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Administrator, 2011-06-17 21:06:05, 2011-06-17 21:06:05, administrator)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (astronaut%)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Astronaut, 2011-06-17 21:06:05, 2011-06-17 21:06:05, astronaut)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (carpenter%)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Carpenter, 2011-06-17 21:06:05, 2011-06-17 21:06:05, carpenter)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 248, Sensio Labs, Web Developer, Paris, France, expired job, Send your resume to lorem.ipsum [at] dolor.sit, 2005-12-01, job_expired, job@example.com, 2005-12-31 00:00:00, 2011-06-17 21:06:05)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 252, Harrinson's ranch, Carpenter, Illinois, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, carpenter_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:06:05)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 251, Nasa, Flight Commander, Washington, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, astronaut_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:06:05)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 248, full-time, Sensio Labs, sensio-labs.gif, http://www.sensiolabs.com/, Web Developer, Paris, France, [0.27Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_sensio_labs, job@example.com, 2011-07-10, 2011-06-17 21:06:05, 2011-06-17 21:06:05)
+Jun 17 21:06:05 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 247, part-time, Extreme Sensio, extreme-sensio.gif, http://www.extreme-sensio.com/, Web Designer, Paris, France, [0.44Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_extreme_sensio, job@example.com, 2011-07-10, 2011-06-17 21:06:05, 2011-06-17 21:06:05)
+Jun 17 21:06:06 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/foo/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'foo',  'sf_format' => 'xml',)
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:06:06 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:06:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (foo)
+Jun 17 21:06:06 symfony [err] {sfError404Exception} Affiliate with token "foo" does not exist or is not activated.
+Jun 17 21:06:06 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/symfony/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'symfony',  'sf_format' => 'xml',)
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:06:06 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:06:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (symfony)
+Jun 17 21:06:06 symfony [err] {sfError404Exception} Affiliate with token "symfony" does not exist or is not activated.
+Jun 17 21:06:06 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'xml',)
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:06:06 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:06:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:06:06 symfony [err] {sfError404Exception} Affiliate with token "sensio_labs" does not exist or is not activated.
+Jun 17 21:06:06 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.json with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'json',)
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:06:06 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:06:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:06:06 symfony [err] {sfError404Exception} Affiliate with token "sensio_labs" does not exist or is not activated.
+Jun 17 21:06:06 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.yaml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'yaml',)
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:06:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:06:06 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:06:06 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:06:06 symfony [err] {sfError404Exception} Affiliate with token "sensio_labs" does not exist or is not activated.
+Jun 17 21:08:43 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category_affiliate - ()
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_job - ()
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_affiliate - ()
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category - ()
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (1, http://www.sensio-labs.com/, fabien.potencier@example.com, sensio_labs, 2011-06-17 21:08:44, 2011-06-17 21:08:44)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (programming%)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Programming, 2011-06-17 21:08:44, 2011-06-17 21:08:44, programming)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (253, 1)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, http://www.symfony-project.org/, fabien.potencier@example.org, symfony, 2011-06-17 21:08:44, 2011-06-17 21:08:44)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (design%)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Design, 2011-06-17 21:08:44, 2011-06-17 21:08:44, design)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (254, 2)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (253, 2)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (manager%)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Manager, 2011-06-17 21:08:44, 2011-06-17 21:08:44, manager)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (administrator%)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Administrator, 2011-06-17 21:08:44, 2011-06-17 21:08:44, administrator)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (astronaut%)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Astronaut, 2011-06-17 21:08:44, 2011-06-17 21:08:44, astronaut)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (carpenter%)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Carpenter, 2011-06-17 21:08:44, 2011-06-17 21:08:44, carpenter)
+Jun 17 21:08:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 253, Sensio Labs, Web Developer, Paris, France, expired job, Send your resume to lorem.ipsum [at] dolor.sit, 2005-12-01, job_expired, job@example.com, 2005-12-31 00:00:00, 2011-06-17 21:08:44)
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 258, Harrinson's ranch, Carpenter, Illinois, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, carpenter_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:08:45)
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 257, Nasa, Flight Commander, Washington, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, astronaut_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:08:45)
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 253, full-time, Sensio Labs, sensio-labs.gif, http://www.sensiolabs.com/, Web Developer, Paris, France, [0.27Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_sensio_labs, job@example.com, 2011-07-10, 2011-06-17 21:08:45, 2011-06-17 21:08:45)
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 254, part-time, Extreme Sensio, extreme-sensio.gif, http://www.extreme-sensio.com/, Web Designer, Paris, France, [0.44Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_extreme_sensio, job@example.com, 2011-07-10, 2011-06-17 21:08:45, 2011-06-17 21:08:45)
+Jun 17 21:08:45 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/foo/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'foo',  'sf_format' => 'xml',)
+Jun 17 21:08:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:08:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:08:45 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (foo)
+Jun 17 21:08:45 symfony [err] {sfError404Exception} Affiliate with token "foo" does not exist or is not activated.
+Jun 17 21:08:45 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/symfony/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'symfony',  'sf_format' => 'xml',)
+Jun 17 21:08:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:08:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:08:45 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (symfony)
+Jun 17 21:08:45 symfony [err] {sfError404Exception} Affiliate with token "symfony" does not exist or is not activated.
+Jun 17 21:08:45 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.xml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'xml',)
+Jun 17 21:08:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:08:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:08:45 symfony [info] {apiActions} Call "apiActions->executeList()"
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.token = ?) LIMIT 1 - (sensio_labs)
+Jun 17 21:08:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.category_id AS j__category_id, j.type AS j__type, j.company AS j__company, j.logo AS j__logo, j.url AS j__url, j.position AS j__position, j.location AS j__location, j.description AS j__description, j.how_to_apply AS j__how_to_apply, j.token AS j__token, j.is_public AS j__is_public, j.is_activated AS j__is_activated, j.email AS j__email, j.expires_at AS j__expires_at, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_job j LEFT JOIN jobeet_category j2 ON j.category_id = j2.id LEFT JOIN jobeet_category_affiliate j4 ON (j2.id = j4.category_id) LEFT JOIN jobeet_affiliate j3 ON j3.id = j4.affiliate_id WHERE (j3.id = ? AND j.is_activated = ? AND j.expires_at > ?) ORDER BY j.created_at DESC - (1, 1, 2011-06-17 21:08:45)
+Jun 17 21:08:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/modules/api/templates/listSuccess.xml.php"
+Jun 17 21:34:43 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 17 21:34:43 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category_affiliate - ()
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_job - ()
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_affiliate - ()
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category - ()
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (1, http://www.sensio-labs.com/, fabien.potencier@example.com, sensio_labs, 2011-06-17 21:34:44, 2011-06-17 21:34:44)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (programming%)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Programming, 2011-06-17 21:34:44, 2011-06-17 21:34:44, programming)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (259, 3)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, http://www.symfony-project.org/, fabien.potencier@example.org, symfony, 2011-06-17 21:34:44, 2011-06-17 21:34:44)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (design%)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Design, 2011-06-17 21:34:44, 2011-06-17 21:34:44, design)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (260, 4)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (259, 4)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (manager%)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Manager, 2011-06-17 21:34:44, 2011-06-17 21:34:44, manager)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (administrator%)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Administrator, 2011-06-17 21:34:44, 2011-06-17 21:34:44, administrator)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (astronaut%)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Astronaut, 2011-06-17 21:34:44, 2011-06-17 21:34:44, astronaut)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (carpenter%)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Carpenter, 2011-06-17 21:34:44, 2011-06-17 21:34:44, carpenter)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 259, Sensio Labs, Web Developer, Paris, France, expired job, Send your resume to lorem.ipsum [at] dolor.sit, 2005-12-01, job_expired, job@example.com, 2005-12-31 00:00:00, 2011-06-17 21:34:44)
+Jun 17 21:34:44 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 264, Harrinson's ranch, Carpenter, Illinois, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, carpenter_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:34:44)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 263, Nasa, Flight Commander, Washington, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, astronaut_job, job@example.com, 2011-07-18 00:00:00, 2011-06-17 21:34:45)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 259, full-time, Sensio Labs, sensio-labs.gif, http://www.sensiolabs.com/, Web Developer, Paris, France, [0.27Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_sensio_labs, job@example.com, 2011-07-10, 2011-06-17 21:34:45, 2011-06-17 21:34:45)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 260, part-time, Extreme Sensio, extreme-sensio.gif, http://www.extreme-sensio.com/, Web Designer, Paris, France, [0.44Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_extreme_sensio, job@example.com, 2011-07-10, 2011-06-17 21:34:45, 2011-06-17 21:34:45)
+Jun 17 21:34:45 symfony [info] {sfPatternRouting} Match route "affiliate_new" (/affiliate/new.:sf_format) for /affiliate/new with parameters array (  'module' => 'affiliate',  'action' => 'new',  'sf_format' => 'html',)
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:34:45 symfony [info] {affiliateActions} Call "affiliateActions->executeNew()"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/newSuccess.php"
+Jun 17 21:34:45 symfony [info] {sfPartialView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/_form.php"
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Sqlite} query : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j - ()
+Jun 17 21:34:45 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {main} Get slot "title"
+Jun 17 21:34:45 symfony [info] {sfWebResponse} Send content (4984 o)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug = ?) LIMIT 1 - (programming)
+Jun 17 21:34:45 symfony [info] {sfPatternRouting} Match route "affiliate_create" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'create',  'sf_format' => 'html',)
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:34:45 symfony [info] {affiliateActions} Call "affiliateActions->executeCreate()"
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_category j WHERE j.id IN (?) - (259)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.email = ?) - (foo@example.com)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j WHERE (j.id IN (?)) - (259)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, http://www.example.com/, foo@example.com, 48658f276badd03f7adb14d73933c4cb6d1369ec, 2011-06-17 21:34:45, 2011-06-17 21:34:45)
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (259, 5)
+Jun 17 21:34:45 symfony [info] {sfFrontWebController} Redirect to "/index.php/affiliate/5/wait"
+Jun 17 21:34:45 symfony [info] {sfWebResponse} Send content (98 o)
+Jun 17 21:34:45 symfony [info] {sfPatternRouting} Match route "affiliate_wait" (/affiliate/:id/wait.:sf_format) for /affiliate/5/wait with parameters array (  'module' => 'affiliate',  'action' => 'wait',  'sf_format' => 'html',  'id' => '5',)
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:34:45 symfony [info] {affiliateActions} Call "affiliateActions->executeWait()"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/waitSuccess.php"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {main} Get slot "title"
+Jun 17 21:34:45 symfony [info] {sfWebResponse} Send content (2696 o)
+Jun 17 21:34:45 symfony [info] {sfPatternRouting} Match route "affiliate_new" (/affiliate/new.:sf_format) for /affiliate/new with parameters array (  'module' => 'affiliate',  'action' => 'new',  'sf_format' => 'html',)
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:34:45 symfony [info] {affiliateActions} Call "affiliateActions->executeNew()"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/newSuccess.php"
+Jun 17 21:34:45 symfony [info] {sfPartialView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/_form.php"
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Sqlite} query : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j - ()
+Jun 17 21:34:45 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {main} Get slot "title"
+Jun 17 21:34:45 symfony [info] {sfWebResponse} Send content (4984 o)
+Jun 17 21:34:45 symfony [info] {sfPatternRouting} Match route "affiliate_create" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'create',  'sf_format' => 'html',)
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 17 21:34:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 17 21:34:45 symfony [info] {affiliateActions} Call "affiliateActions->executeCreate()"
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.email = ?) - (foo@example.com)
+Jun 17 21:34:45 symfony [info] {affiliateActions} Change template to "CURRENT/new"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/newSuccess.php"
+Jun 17 21:34:45 symfony [info] {sfPartialView} Render "/home/dave/jobeet/apps/frontend/modules/affiliate/templates/_form.php"
+Jun 17 21:34:45 symfony [info] {Doctrine_Connection_Sqlite} query : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j - ()
+Jun 17 21:34:45 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/frontend/templates/layout.php"
+Jun 17 21:34:45 symfony [info] {main} Get slot "title"
+Jun 17 21:34:45 symfony [info] {sfWebResponse} Send content (5200 o)
