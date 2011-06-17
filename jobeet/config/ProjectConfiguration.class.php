@@ -5,6 +5,23 @@ sfCoreAutoload::register();
 
 class ProjectConfiguration extends sfProjectConfiguration
 {
+   
+  static protected $zendLoaded = false;
+ 
+  static public function registerZend()
+  {
+    if (self::$zendLoaded)
+    {
+      return;
+    }
+ 
+    set_include_path('/lib/vendor'.PATH_SEPARATOR.get_include_path());
+    require_once '/lib/vendor/Zend/Loader/Autoloader.php';
+    Zend_Loader_Autoloader::getInstance();
+    self::$zendLoaded = true;
+  }  
+    
+    
   public function setup()
   {
     $this->enablePlugins('sfDoctrinePlugin');

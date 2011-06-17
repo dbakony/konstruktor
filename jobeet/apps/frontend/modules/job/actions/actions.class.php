@@ -10,6 +10,13 @@
  */
 class jobActions extends sfActions
 {
+  public function executeSearch(sfWebRequest $request)
+  {
+    $this->forwardUnless($query = $request->getParameter('query'), 'job', 'index');
+ 
+    $this->jobs = Doctrine_Core::getTable('JobeetJob') ->getForLuceneQuery($query);
+  }
+    
   public function executeIndex(sfWebRequest $request)
   {
    $this->categories = Doctrine_Core::getTable('JobeetCategory')->getWithJobs();
