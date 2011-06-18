@@ -1,0 +1,8 @@
+sfGuardUser:
+  admin:
+    email_address: davidbakony@yahoo.co.uk
+    username: dave
+    password: qwqwqw
+    first_name: Dave
+    last_name: Bakony
+    is_super_admin: true

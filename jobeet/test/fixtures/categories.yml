@@ -1,6 +1,5 @@
 # data/fixtures/categories.yml
 JobeetCategory:
-  JobeetCategory:
   design:
     Translation:
       en:
