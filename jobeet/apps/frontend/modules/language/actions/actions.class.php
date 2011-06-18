@@ -16,7 +16,7 @@ class languageActions extends sfActions
       $this->getUser(),
       array('languages' => array('en', 'fr'))
     );
- 
+    $form->disableLocalCSRFProtection();
     $form->process($request);
  
     return $this->redirect('localized_homepage');

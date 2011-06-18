@@ -264,3 +264,16 @@ $browser->
   followRedirect()->
   with('user')->isCulture('fr')
 ;
+
+$browser->
+  info('  7 - Job creation page')->
+ 
+  get('/fr/')->
+  with('view_cache')->isCached(true, false)->
+ 
+  createJob(array('category_id' => Doctrine_Core::getTable('JobeetCategory')->findOneBySlug('programming')->getId()), true)->
+ 
+  get('/fr/')->
+  with('view_cache')->isCached(true, false)->
+  with('response')->checkElement('.category_programming .more_jobs', '/23/')
+;

@@ -18,7 +18,7 @@ class JobeetJobForm extends BaseJobeetJobForm
     $this->validatorSchema['email'],
       new sfValidatorEmail(),
     ));
-      
+    $this->disableLocalCSRFProtection();  
     
   
      $this->widgetSchema['type'] = new sfWidgetFormChoice(array(
