@@ -237,3 +237,30 @@ $browser->
     checkElement('table tr', 2)->
   end()
 ;
+
+$browser->setHttpHeader('ACCEPT_LANGUAGE', 'fr_FR,fr,en;q=0.7');
+$browser->
+  info('6 - User culture')->
+ 
+  restart()->
+ 
+  info('  6.1 - For the first request, symfony guesses the best culture')->
+  get('/')->
+  with('response')->isRedirected()->
+  followRedirect()->
+  with('user')->isCulture('fr')->
+ 
+  info('  6.2 - Available cultures are en and fr')->
+  get('/it/')->
+  with('response')->isStatusCode(404)
+;
+ 
+$browser->setHttpHeader('ACCEPT_LANGUAGE', 'en,fr;q=0.7');
+$browser->
+  info('  6.3 - The culture guessing is only for the first request')->
+ 
+  get('/')->
+  with('response')->isRedirected()->
+  followRedirect()->
+  with('user')->isCulture('fr')
+;

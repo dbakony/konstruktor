@@ -1,52 +1,59 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+change_language:
+  url:   /change_language
+  param: { module: language, action: changeLanguage }
 job_search:
   url:   /search
   param: { module: job, action: search }
-affiliate:
-  class:   sfDoctrineRouteCollection
-  options:
-    model: JobeetAffiliate
-    actions: [new, create]
-    object_actions: { wait: get}
-
-api_jobs:
-  url:     /api/:token/jobs.:sf_format
-  class:   sfDoctrineRoute
-  param:   { module: api, action: list }
-  options: { model: JobeetJob, type: list, method: getForToken }
+  
+localized_homepage:
+  url:   /:sf_culture/
+  param: { module: job, action: index }
   requirements:
-    sf_format: (?:xml|json|yaml)
+    sf_culture: (?:fr|en)
     
+affiliate:
+  class: sfDoctrineRouteCollection
+  options:
+    model:          JobeetAffiliate
+    actions:        [new, create]
+    object_actions: { wait: get }
+    prefix_path:    /:sf_culture/affiliate
+ 
 category:
-  url:     /category/:slug.:sf_format
+  url:     /:sf_culture/category/:slug.:sf_format
   class:   sfDoctrineRoute
   param:   { module: category, action: show, sf_format: html }
-  options: { model: JobeetCategory, type: object }
+  options: { model: JobeetCategory, type: object, method: doSelectForSlug }
   requirements:
-    sf_format: (?:html|atom)
-
+  sf_format: (?:html|atom)
+    
+job_search:
+  url:   /:sf_culture/search
+  param: { module: job, action: search }
+ 
 job:
-  class:   sfDoctrineRouteCollection
+  class: sfDoctrineRouteCollection
   options:
     model:          JobeetJob
     column:         token
-    object_actions: { publish: PUT, extend: PUT }
+    object_actions: { publish: put, extend: put }
+    prefix_path:    /:sf_culture/job
   requirements:
     token: \w+
  
 job_show_user:
-  url:     /job/:company_slug/:location_slug/:id/:position_slug
+  url:     /:sf_culture/job/:company_slug/:location_slug/:id/:position_slug
   class:   sfDoctrineRoute
   options:
     model: JobeetJob
-    type:  object
+    type: object
     method_for_query: retrieveActiveJob
   param:   { module: job, action: show }
   requirements:
-    id: \d+
-    sf_method: [GET]
- 
+    id:        \d+
+    sf_method: get
 # default rules
 homepage:
   url:   /

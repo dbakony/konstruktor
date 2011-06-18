@@ -99,10 +99,8 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(  'is_link' => true,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'name' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'created_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
       'updated_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
-      'slug' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'jobeet_affiliates_list' => array(  'is_link' => false,  'is_real' => false,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
     );
   }
@@ -111,10 +109,8 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'name' => array(),
       'created_at' => array(),
       'updated_at' => array(),
-      'slug' => array(),
       'jobeet_affiliates_list' => array(),
     );
   }
@@ -123,10 +119,8 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'name' => array(),
       'created_at' => array(),
       'updated_at' => array(),
-      'slug' => array(),
       'jobeet_affiliates_list' => array(),
     );
   }
@@ -135,10 +129,8 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'name' => array(),
       'created_at' => array(),
       'updated_at' => array(),
-      'slug' => array(),
       'jobeet_affiliates_list' => array(),
     );
   }
@@ -147,10 +139,8 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'name' => array(),
       'created_at' => array(),
       'updated_at' => array(),
-      'slug' => array(),
       'jobeet_affiliates_list' => array(),
     );
   }
@@ -159,10 +149,8 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
   {
     return array(
       'id' => array(),
-      'name' => array(),
       'created_at' => array(),
       'updated_at' => array(),
-      'slug' => array(),
       'jobeet_affiliates_list' => array(),
     );
   }

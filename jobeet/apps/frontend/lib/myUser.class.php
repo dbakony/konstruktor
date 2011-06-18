@@ -2,9 +2,22 @@
 
 class myUser extends sfGuardSecurityUser
 {
-     public function resetJobHistory()
+     
+    public function isFirstRequest($boolean = null)
+        {
+          if (is_null($boolean)) // ha a $booleannak nincs erteke, akkoe ez a leges legelső látogatása
+          {
+            return $this->getAttribute('first_request', true); //visszatér true-val
+          }
+
+          $this->setAttribute('first_request', $boolean); //különben a paraméterben megkaptt $booleannal -> false-szal
+        }
+    
+    
+    
+    public function resetJobHistory() //törli a history tömböt
       {
-        $this->getAttributeHolder()->remove('job_history');
+        $this->getAttributeHolder()->remove('job_history'); // törli a job_history attribútumot
       } 
     
     public function addJobToHistory(JobeetJob $job)

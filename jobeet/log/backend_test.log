@@ -433,3 +433,447 @@ Jun 17 22:21:34 symfony [info] {affiliateActions} Call "affiliateActions->execut
 Jun 17 22:21:34 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.id = ?) - (8)
 Jun 17 22:21:34 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE jobeet_affiliate SET is_active = ?, updated_at = ? WHERE id = ? - (1, 2011-06-17 22:21:34, 8)
 Jun 17 22:21:34 symfony [err] {RuntimeException} PHP sent a "warning" error at /lib/vendor/symfony/lib/vendor/swiftmailer/classes/Swift/Transport/StreamBuffer.php line 233 (fsockopen(): unable to connect to localhost:25 (Connection refused))
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:09 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 18 07:51:09 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM sf_guard_user - ()
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category_affiliate - ()
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_job - ()
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_affiliate - ()
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category - ()
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO sf_guard_user (algorithm, is_active, is_super_admin, email_address, username, salt, password, first_name, last_name, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (sha1, 1, 1, davidbakony@yahoo.co.uk, dave, ca406ceb94ba022c4bfac6d8f7dfed8c, 8dd896819c4a016dbf4c32cdb211c10b01bd4cc1, Dave, Bakony, 2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (1, http://www.sensio-labs.com/, fabien.potencier@example.com, sensio_labs, 2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (programming%, en, Programming)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (8, en, Programming, programming-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (programmation%, fr, Programmation)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (8, fr, Programmation, programmation-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (8, 3)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, http://www.symfony-project.org/, fabien.potencier@example.org, symfony, 2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (design%, en, Design)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (9, en, Design, design-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (design%, fr, design)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (9, fr, design, design-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (9, 4)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (8, 4)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (manager%, en, Manager)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (11, en, Manager, manager-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (manager%, fr, Manager)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (11, fr, Manager, manager-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (administrator%, en, Administrator)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (12, en, Administrator, administrator-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (administrateur%, fr, Administrateur)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (12, fr, Administrateur, administrateur-1)
+Jun 18 07:51:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:10, 2011-06-18 07:51:10)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (astronaut%, en, Astronaut)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (13, en, Astronaut, astronaut-1)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (astronauteur%, fr, Astronauteur :))
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (13, fr, Astronauteur :), astronauteur-1)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:51:11, 2011-06-18 07:51:11)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (carpenter%, en, Carpenter)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (14, en, Carpenter, carpenter-1)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (charpentier%, fr, charpentier)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (14, fr, charpentier, charpentier-1)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 8, Sensio Labs, Web Developer, Paris, France, expired job, Send your resume to lorem.ipsum [at] dolor.sit, 2005-12-01, job_expired, job@example.com, 2005-12-31 00:00:00, 2011-06-18 07:51:11)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 14, Harrinson's ranch, Carpenter, Illinois, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, carpenter_job, job@example.com, 2011-07-18 00:00:00, 2011-06-18 07:51:11)
+Jun 18 07:51:11 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 13, Nasa, Flight Commander, Washington, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, astronaut_job, job@example.com, 2011-07-18 00:00:00, 2011-06-18 07:51:11)
+Jun 18 07:51:12 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 8, full-time, Sensio Labs, sensio-labs.gif, http://www.sensiolabs.com/, Web Developer, Paris, France, [0.27Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_sensio_labs, job@example.com, 2011-07-10, 2011-06-18 07:51:12, 2011-06-18 07:51:12)
+Jun 18 07:51:12 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 9, part-time, Extreme Sensio, extreme-sensio.gif, http://www.extreme-sensio.com/, Web Designer, Paris, France, [0.44Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_extreme_sensio, job@example.com, 2011-07-10, 2011-06-18 07:51:12, 2011-06-18 07:51:12)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'index',  'sf_format' => 'html',)
+Jun 18 07:51:12 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:12 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:51:12 symfony [info] {sfBasicSecurityFilter} Action "affiliate/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Jun 18 07:51:12 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:51:12 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 18 07:51:12 symfony [info] {sfPHPView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Jun 18 07:51:12 symfony [info] {sfPartialView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Jun 18 07:51:12 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:12 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:12 symfony [info] {sfWebResponse} Send content (1873 o)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:12 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/guard/login) for /guard/login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Jun 18 07:51:12 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:51:12 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 18 07:51:12 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (dave, 1)
+Jun 18 07:51:12 symfony [info] {myUser} User is authenticated
+Jun 18 07:51:12 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.permission_id AS s2__permission_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_permission s LEFT JOIN sf_guard_user_permission s2 ON s.id = s2.permission_id WHERE (s2.user_id IN (?)) - (1)
+Jun 18 07:51:12 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.group_id AS s2__group_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_group s LEFT JOIN sf_guard_user_group s2 ON s.id = s2.group_id WHERE (s2.user_id IN (?)) - (1)
+Jun 18 07:51:12 symfony [info] {myUser} Add credential(s) ""
+Jun 18 07:51:12 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE sf_guard_user SET last_login = ?, updated_at = ? WHERE id = ? - (2011-06-18 07:51:12, 2011-06-18 07:51:12, 1)
+Jun 18 07:51:13 symfony [info] {sfFrontWebController} Redirect to "http://localhost/index.php/affiliate"
+Jun 18 07:51:13 symfony [info] {sfWebResponse} Send content (107 o)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'index',  'sf_format' => 'html',)
+Jun 18 07:51:13 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:13 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:51:13 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:51:13 symfony [info] {affiliateActions} Call "affiliateActions->executeIndex()"
+Jun 18 07:51:13 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_affiliate j WHERE j.is_active = ? - (0)
+Jun 18 07:51:13 symfony [info] {sfPHPView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/indexSuccess.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_assets.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_flashes.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_header.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters_field.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters_field.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters_field.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_th_tabular.php"
+Jun 18 07:51:13 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:51:13 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.is_active = ?) ORDER BY j.is_active asc LIMIT 20 - (0)
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_td_batch_actions.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_td_tabular.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_field_boolean.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_td_actions.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_batch_actions.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_actions.php"
+Jun 18 07:51:13 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_footer.php"
+Jun 18 07:51:13 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:13 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:13 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_affiliate j WHERE j.is_active = ? - (0)
+Jun 18 07:51:13 symfony [info] {sfWebResponse} Send content (6939 o)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:13 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate_object" (/affiliate/:id/:action.:sf_format) for /affiliate/4/ListActivate with parameters array (  'module' => 'affiliate',  'action' => 'ListActivate',  'sf_format' => 'html',  'id' => '4',)
+Jun 18 07:51:13 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:13 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:51:13 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:51:13 symfony [info] {affiliateActions} Call "affiliateActions->executeListActivate()"
+Jun 18 07:51:13 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.id = ?) - (4)
+Jun 18 07:51:13 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE jobeet_affiliate SET is_active = ?, updated_at = ? WHERE id = ? - (1, 2011-06-18 07:51:13, 4)
+Jun 18 07:51:14 symfony [err] {RuntimeException} PHP sent a "warning" error at /lib/vendor/symfony/lib/vendor/swiftmailer/classes/Swift/Transport/StreamBuffer.php line 233 (fsockopen(): unable to connect to localhost:25 (Connection refused))
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /category/index with parameters array (  'module' => 'category',  'action' => 'index',)
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:51:14 symfony [info] {sfBasicSecurityFilter} Action "category/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:51:14 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 18 07:51:14 symfony [info] {sfPHPView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Jun 18 07:51:14 symfony [info] {sfPartialView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Jun 18 07:51:14 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:14 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:14 symfony [info] {sfWebResponse} Send content (1873 o)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:51:14 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /job/index with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:51:14 symfony [info] {sfBasicSecurityFilter} Action "job/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:51:14 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:51:14 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 18 07:51:14 symfony [info] {sfPHPView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Jun 18 07:51:14 symfony [info] {sfPartialView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Jun 18 07:51:14 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:14 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:51:14 symfony [info] {sfWebResponse} Send content (1873 o)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:52:40 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 18 07:52:40 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM sf_guard_user - ()
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category_affiliate - ()
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_job - ()
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_affiliate - ()
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Sqlite} exec : DELETE FROM jobeet_category - ()
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO sf_guard_user (algorithm, is_active, is_super_admin, email_address, username, salt, password, first_name, last_name, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (sha1, 1, 1, davidbakony@yahoo.co.uk, dave, 0309714ce69fda6395255bae0fb769da, 94ef9c68dfc6fc09a742c0287b9f20f3aa81b133, Dave, Bakony, 2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (1, http://www.sensio-labs.com/, fabien.potencier@example.com, sensio_labs, 2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (programming%, en, Programming)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (50, en, Programming, programming-7)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (programmation%, fr, Programmation)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (50, fr, Programmation, programmation-7)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (50, 15)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, http://www.symfony-project.org/, fabien.potencier@example.org, symfony, 2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (design%, en, Design)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (51, en, Design, design-7)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (design%, fr, design)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (51, fr, design, design-7)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (51, 16)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (50, 16)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:41, 2011-06-18 07:52:41)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (manager%, en, Manager)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (53, en, Manager, manager-7)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (manager%, fr, Manager)
+Jun 18 07:52:41 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (53, fr, Manager, manager-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:42, 2011-06-18 07:52:42)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (administrator%, en, Administrator)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (54, en, Administrator, administrator-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (administrateur%, fr, Administrateur)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (54, fr, Administrateur, administrateur-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:42, 2011-06-18 07:52:42)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (astronaut%, en, Astronaut)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (55, en, Astronaut, astronaut-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (astronauteur%, fr, Astronauteur :))
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (55, fr, Astronauteur :), astronauteur-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2011-06-18 07:52:42, 2011-06-18 07:52:42)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (carpenter%, en, Carpenter)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (56, en, Carpenter, carpenter-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (charpentier%, fr, charpentier)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (56, fr, charpentier, charpentier-7)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 50, Sensio Labs, Web Developer, Paris, France, expired job, Send your resume to lorem.ipsum [at] dolor.sit, 2005-12-01, job_expired, job@example.com, 2005-12-31 00:00:00, 2011-06-18 07:52:42)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 56, Harrinson's ranch, Carpenter, Illinois, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, carpenter_job, job@example.com, 2011-07-18 00:00:00, 2011-06-18 07:52:42)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, created_at, token, email, expires_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 55, Nasa, Flight Commander, Washington, United States, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] dolor.sit, 2011-06-18 00:00:00, astronaut_job, job@example.com, 2011-07-18 00:00:00, 2011-06-18 07:52:42)
+Jun 18 07:52:42 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 50, full-time, Sensio Labs, sensio-labs.gif, http://www.sensiolabs.com/, Web Developer, Paris, France, [0.27Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_sensio_labs, job@example.com, 2011-07-10, 2011-06-18 07:52:42, 2011-06-18 07:52:42)
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, type, company, logo, url, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 51, part-time, Extreme Sensio, extreme-sensio.gif, http://www.extreme-sensio.com/, Web Designer, Paris, France, [0.44Kb], Send your resume to fabien.potencier [at] sensio.com
+, job_extreme_sensio, job@example.com, 2011-07-10, 2011-06-18 07:52:43, 2011-06-18 07:52:43)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'index',  'sf_format' => 'html',)
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:52:43 symfony [info] {sfBasicSecurityFilter} Action "affiliate/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:52:43 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 18 07:52:43 symfony [info] {sfPHPView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Jun 18 07:52:43 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:52:43 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:52:43 symfony [info] {sfWebResponse} Send content (1873 o)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/guard/login) for /guard/login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:52:43 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (dave, 1)
+Jun 18 07:52:43 symfony [info] {myUser} User is authenticated
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.permission_id AS s2__permission_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_permission s LEFT JOIN sf_guard_user_permission s2 ON s.id = s2.permission_id WHERE (s2.user_id IN (?)) - (7)
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.group_id AS s2__group_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_group s LEFT JOIN sf_guard_user_group s2 ON s.id = s2.group_id WHERE (s2.user_id IN (?)) - (7)
+Jun 18 07:52:43 symfony [info] {myUser} Add credential(s) ""
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE sf_guard_user SET last_login = ?, updated_at = ? WHERE id = ? - (2011-06-18 07:52:43, 2011-06-18 07:52:43, 7)
+Jun 18 07:52:43 symfony [info] {sfFrontWebController} Redirect to "http://localhost/index.php/affiliate"
+Jun 18 07:52:43 symfony [info] {sfWebResponse} Send content (107 o)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'index',  'sf_format' => 'html',)
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:52:43 symfony [info] {affiliateActions} Call "affiliateActions->executeIndex()"
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_affiliate j WHERE j.is_active = ? - (0)
+Jun 18 07:52:43 symfony [info] {sfPHPView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/indexSuccess.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_assets.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_flashes.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_header.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters_field.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters_field.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_filters_field.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_th_tabular.php"
+Jun 18 07:52:43 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.is_active = ?) ORDER BY j.is_active asc LIMIT 20 - (0)
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_td_batch_actions.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_td_tabular.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_field_boolean.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_td_actions.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_batch_actions.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_actions.php"
+Jun 18 07:52:43 symfony [info] {sfPartialView} Render "/home/dave/jobeet/cache/backend/test/modules/autoAffiliate/templates/_list_footer.php"
+Jun 18 07:52:43 symfony [info] {sfPHPView} Decorate content with "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:52:43 symfony [info] {sfPHPView} Render "/home/dave/jobeet/apps/backend/templates/layout.php"
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_affiliate j WHERE j.is_active = ? - (0)
+Jun 18 07:52:43 symfony [info] {sfWebResponse} Send content (6942 o)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 18 07:52:43 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate_object" (/affiliate/:id/:action.:sf_format) for /affiliate/16/ListActivate with parameters array (  'module' => 'affiliate',  'action' => 'ListActivate',  'sf_format' => 'html',  'id' => '16',)
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 18 07:52:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 07:52:43 symfony [info] {affiliateActions} Call "affiliateActions->executeListActivate()"
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.id = ?) - (16)
+Jun 18 07:52:43 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE jobeet_affiliate SET is_active = ?, updated_at = ? WHERE id = ? - (1, 2011-06-18 07:52:43, 16)
+Jun 18 07:52:44 symfony [err] {RuntimeException} PHP sent a "warning" error at /lib/vendor/symfony/lib/vendor/swiftmailer/classes/Swift/Transport/StreamBuffer.php line 233 (fsockopen(): unable to connect to localhost:25 (Connection refused))

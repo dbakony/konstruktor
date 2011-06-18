@@ -1,14 +1,39 @@
 # data/fixtures/categories.yml
 JobeetCategory:
+  JobeetCategory:
   design:
-    name: Design
+    Translation:
+      en:
+        name: Design
+      fr:
+        name: design
   programming:
-    name: Programming
+    Translation:
+      en:
+        name: Programming
+      fr:
+        name: Programmation
   manager:
-    name: Manager
+    Translation:
+      en:
+        name: Manager
+      fr:
+        name: Manager
   administrator:
-    name: Administrator
+    Translation:
+      en:
+        name: Administrator
+      fr:
+        name: Administrateur
   astronaut:
-    name: Astronaut
+    Translation:
+      en:
+        name: Astronaut
+      fr:
+        name: Astronauteur :)
   carpenter:
-    name: Carpenter
+    Translation:
+      en:
+        name: Carpenter
+      fr:
+        name: charpentier
