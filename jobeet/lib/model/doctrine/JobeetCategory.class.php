@@ -12,9 +12,9 @@
  */
 class JobeetCategory extends BaseJobeetCategory
 {
-    public function getLatestPost()
+    public function getLatestPost() 
       {
-        return $this->getActiveJobs(1)->getFirst();
+        return $this->getActiveJobs(1)->getFirst(); //visszatér az utolsó feltöltött álláshirdetéssel
       }
     
     public function getActiveJobsQuery()
@@ -23,11 +23,11 @@ class JobeetCategory extends BaseJobeetCategory
         ->from('JobeetJob j')
         ->where('j.category_id = ?', $this->getId());
 
-      return Doctrine_Core::getTable('JobeetJob')->addActiveJobsQuery($q);
+      return Doctrine_Core::getTable('JobeetJob')->addActiveJobsQuery($q); //felépíti az aktív álláshirdetéseket kigyűjtő lekérdezést
     }
     
     
-    public function countActiveJobs()
+    public function countActiveJobs() //visszatér az aktív álláshirdetések számával
     {
       $q = Doctrine_Query::create()
         ->from('JobeetJob j')
@@ -37,7 +37,7 @@ class JobeetCategory extends BaseJobeetCategory
     }
     
         
-    public function getActiveJobs($max = 10)
+    public function getActiveJobs($max = 10) //visszatér az aktív álláshirdetések listájával
     {
       $q = $this->getActiveJobsQuery()
         ->limit($max);

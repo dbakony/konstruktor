@@ -10,16 +10,16 @@
  */
 class languageActions extends sfActions
 {
-  public function executeChangeLanguage(sfWebRequest $request)
+  public function executeChangeLanguage(sfWebRequest $request) //nyelvváltás
   {
     $form = new sfFormLanguage(
       $this->getUser(),
       array('languages' => array('en', 'fr'))
-    );
+    ); // a nyelvválasztó form kirakása
     $form->disableLocalCSRFProtection();
     $form->process($request);
  
-    return $this->redirect('localized_homepage');
+    return $this->redirect('localized_homepage'); // átirányítás a localized homepage route-ra
   }
   public function executeIndex(sfWebRequest $request)
   {

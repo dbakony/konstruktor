@@ -91,7 +91,7 @@
                 <a href="<?php echo url_for('affiliate_new') ?>"><?php echo __('Become an affiliate'); ?></a>
             </li>
           </ul>
-          <?php include_component('language', 'language') ?>
+          <?php include_component('language', 'language') //a language komponens betöltése ?>
         </div>
       </div>
     </div>

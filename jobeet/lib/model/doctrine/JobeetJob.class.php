@@ -13,7 +13,7 @@
 class JobeetJob extends BaseJobeetJob
 {
     
-    public function asArray($host)
+    public function asArray($host) //egy állásajánlatot tömbbé alakítva ad vissza
       {
         return array(
           'category'     => $this->getJobeetCategory()->getName(),
@@ -31,20 +31,20 @@ class JobeetJob extends BaseJobeetJob
     
     
     
-    public function extend($force = false)
+    public function extend($force = false) //megnöveli egy állásajánlat lejárati dátumát mai dátumtól számítva a configban beállított napok számával
       {
         if (!$force && !$this->expiresSoon())
         {
           return false;
         }
-
-        $this->setExpiresAt(date('Y-m-d', time() + 86400 * sfConfig::get('app_active_days')));
+        
+        $this->setExpiresAt(date('Y-m-d', time() + 86400 * sfConfig::get('app_active_days'))); //updateli az expiresAt mezőta mai dátum + a configban beállított napra
         $this->save();
 
         return true;
       }
   
-    public function publish()
+    public function publish() //állásajánlat publikálása
     {
       $this->setIsActivated(true);
       $this->save();
@@ -56,22 +56,22 @@ class JobeetJob extends BaseJobeetJob
           return $this->getType() ? $types[$this->getType()] : '';
         }
 
-    public function isExpired()
+    public function isExpired() // lejárt-e vagy sem
         {
           return $this->getDaysBeforeExpires() < 0;
         }
 
-    public function expiresSoon()
+    public function expiresSoon() //5 napon belül le fog járni
         {
           return $this->getDaysBeforeExpires() < 5;
         }
 
-    public function getDaysBeforeExpires()
+    public function getDaysBeforeExpires() //hány nap van még lejáratig
         {
           return ceil(($this->getDateTimeObject('expires_at')->format('U') - time()) / 86400);
         }
     
-    public function getCompanySlug()
+    public function getCompanySlug() 
         {
           return Jobeet::slugify($this->getCompany());
         }
@@ -90,13 +90,13 @@ class JobeetJob extends BaseJobeetJob
         {
           $index = JobeetJobTable::getLuceneIndex();
 
-          // remove existing entries
+          // remove existing entries // törli az eddig mentett indexeket
           foreach ($index->find('pk:'.$this->getId()) as $hit)
           {
             $index->delete($hit->id);
           }
 
-          // don't index expired and non-activated jobs
+          // don't index expired and non-activated jobs // nem indexeljük a lejárt és nem aktivált állásajánlatokat
           if ($this->isExpired() || !$this->getIsActivated())
           {
             return;
@@ -104,16 +104,16 @@ class JobeetJob extends BaseJobeetJob
 
           $doc = new Zend_Search_Lucene_Document();
 
-          // store job primary key to identify it in the search results
+          // store job primary key to identify it in the search results //eltároljuk az állásajánlat id-jét
           $doc->addField(Zend_Search_Lucene_Field::Keyword('pk', $this->getId()));
 
-          // index job fields
+          // index job fields //indexeljük a állásajánlat mezőit
           $doc->addField(Zend_Search_Lucene_Field::UnStored('position', $this->getPosition(), 'utf-8'));
           $doc->addField(Zend_Search_Lucene_Field::UnStored('company', $this->getCompany(), 'utf-8'));
           $doc->addField(Zend_Search_Lucene_Field::UnStored('location', $this->getLocation(), 'utf-8'));
           $doc->addField(Zend_Search_Lucene_Field::UnStored('description', $this->getDescription(), 'utf-8'));
 
-          // add job to the index
+          // add job to the index 
           $index->addDocument($doc);
           $index->commit();
         }    
@@ -122,7 +122,7 @@ class JobeetJob extends BaseJobeetJob
         
         
         
-    public function save(Doctrine_Connection $conn = null)
+    public function save(Doctrine_Connection $conn = null) // új állásajánlat mentése
       {
         if ($this->isNew() && !$this->getExpiresAt())
         {
@@ -153,13 +153,13 @@ class JobeetJob extends BaseJobeetJob
           }
       }
         
-      public function delete(Doctrine_Connection $conn = null)
+      public function delete(Doctrine_Connection $conn = null) //állásajánlat törlése
         {
           $index = JobeetJobTable::getLuceneIndex();
 
           foreach ($index->find('pk:'.$this->getId()) as $hit)
           {
-            $index->delete($hit->id);
+            $index->delete($hit->id); // ha törlünk egy munkát akkor a hozzá tartozó indexet is törölni kell
           }
 
           return parent::delete($conn);

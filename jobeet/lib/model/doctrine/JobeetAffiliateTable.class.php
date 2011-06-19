@@ -8,7 +8,7 @@
 class JobeetAffiliateTable extends Doctrine_Table
 {
     
-  public function countToBeActivated()
+  public function countToBeActivated() //visszatér az aktív álláshirdetések számával
   {
     $q = $this->createQuery('a')
       ->where('a.is_active = ?', 0);

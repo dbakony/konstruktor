@@ -17,7 +17,7 @@ class JobeetCategoryTable extends Doctrine_Table
           return $this->findOneBySlugAndCulture($parameters['slug'], $parameters['sf_culture']);
         }
 
-     public function findOneBySlugAndCulture($slug, $culture = 'en')
+     public function findOneBySlugAndCulture($slug, $culture = 'en') //ez a fgv megkeresi az első kategóriát ami a culture-nek és a slugnak is megfelel 
         {
           $q = $this->createQuery('a')
             ->leftJoin('a.Translation t')
@@ -32,7 +32,7 @@ class JobeetCategoryTable extends Doctrine_Table
         }
     
       
-    public function getWithJobs()
+    public function getWithJobs() //kigyűjti kategóriánként az állásajánlatokat
     {
         $q = $this->createQuery('c')
           ->leftJoin('c.JobeetJobs j')

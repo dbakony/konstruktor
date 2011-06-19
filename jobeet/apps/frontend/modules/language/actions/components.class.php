@@ -6,7 +6,7 @@ class languageComponents extends sfComponents
     $this->form = new sfFormLanguage(
       $this->getUser(),
       array('languages' => array('en', 'fr'))
-    );
+    ); //nyelvválasztó form összeállítása
     $this->form->disableLocalCSRFProtection();
   }
 }

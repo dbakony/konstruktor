@@ -1,4 +1,4 @@
-<?php use_stylesheet('job.css') ?>
+<?php use_stylesheet('job.css') // stylesheet betöltése ?>
  
 <h1>Post a Job</h1>
  

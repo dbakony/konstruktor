@@ -65,7 +65,7 @@ class JobeetJobTable extends Doctrine_Table
   }
   
   
-  public function getLatestPost()
+  public function getLatestPost() // legutolsó állásajánlat
   {
     $q = Doctrine_Query::create()->from('JobeetJob j');
  
@@ -75,7 +75,7 @@ class JobeetJobTable extends Doctrine_Table
   }
   
   
-  public function getTypes()
+  public function getTypes() // típusok visszaadása
   {
     return self::$types;
   }
@@ -88,7 +88,7 @@ class JobeetJobTable extends Doctrine_Table
 
         return $q;
       }
-  public function cleanup($days)
+  public function cleanup($days) // letörli a $days napnál régebbi nem aktivált állásajánlatokat
     {
       $q = $this->createQuery('a')
         ->delete()

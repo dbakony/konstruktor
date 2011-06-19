@@ -1,4 +1,4 @@
-# config/doctrine/schema.yml
+# config/doctrine/schema.yml - adatbázis szerkezet
 JobeetCategory:
   actAs:
     Timestampable: ~

@@ -8,7 +8,7 @@
  * @author     Your name here
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class JobeetJobForm extends BaseJobeetJobForm
+class JobeetJobForm extends BaseJobeetJobForm //jobform definíció
 {
   public function configure()
   {
@@ -17,21 +17,22 @@ class JobeetJobForm extends BaseJobeetJobForm
     $this->validatorSchema['email'] = new sfValidatorAnd(array(
     $this->validatorSchema['email'],
       new sfValidatorEmail(),
-    ));
+    )); //email mező
     $this->disableLocalCSRFProtection();  
     
   
      $this->widgetSchema['type'] = new sfWidgetFormChoice(array(
       'choices'  => Doctrine_Core::getTable('JobeetJob')->getTypes(),
       'expanded' => true,
-    ));
+    )); //type radios - part time full time ...
+     
     $this->validatorSchema['type'] = new sfValidatorChoice(array(
       'choices' => array_keys(Doctrine_Core::getTable('JobeetJob')->getTypes()),
     ));
  
     $this->widgetSchema['logo'] = new sfWidgetFormInputFile(array(
       'label' => 'Company logo',
-    ));
+    )); //logo File input
  
     $this->widgetSchema->setLabels(array(
       'category_id'    => 'Category',
@@ -50,7 +51,7 @@ class JobeetJobForm extends BaseJobeetJobForm
   }
   
   protected function removeFields()
-  {
+  { //mezők eltávolítása a job formról
     unset(
       $this['created_at'], $this['updated_at'],
       $this['expires_at'], $this['is_activated'],

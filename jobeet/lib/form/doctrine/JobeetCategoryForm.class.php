@@ -12,9 +12,9 @@ class JobeetCategoryForm extends BaseJobeetCategoryForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['jobeet_affiliates_list']);
+      unset($this['created_at'], $this['updated_at'], $this['jobeet_affiliates_list']); //ezek a mezők nem kellenek a formra
       $this->embedI18n(array('en', 'fr'));
-      $this->widgetSchema->setLabel('en', 'English');
-      $this->widgetSchema->setLabel('fr', 'French');
+      $this->widgetSchema->setLabel('en', 'English'); //mezőfelirat
+      $this->widgetSchema->setLabel('fr', 'French');  //mezőfelirat  
   }
 }
