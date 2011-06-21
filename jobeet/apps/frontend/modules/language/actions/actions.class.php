@@ -21,8 +21,8 @@ class languageActions extends sfActions
  
     return $this->redirect('localized_homepage'); // átirányítás a localized homepage route-ra
   }
-  public function executeIndex(sfWebRequest $request)
+  /*public function executeIndex(sfWebRequest $request)
   {
     $this->forward('default', 'module');
-  }
+  }*/
 }

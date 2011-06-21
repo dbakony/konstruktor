@@ -2,9 +2,10 @@
 
 class JobeetTestFunctional extends sfTestFunctional
 {
-  public function createJob($values = array())
+    
+  public function createJob($values = array(), $publish = false)
   {
-    return $this->
+    $this->
       get('/job/new')->
       click('Preview your job', array('job' => array_merge(array(
         'company'      => 'Sensio Labs',
@@ -18,7 +19,7 @@ class JobeetTestFunctional extends sfTestFunctional
       ), $values)))->
       followRedirect()
     ;
-  
+ 
     if ($publish)
     {
       $this->
@@ -29,7 +30,7 @@ class JobeetTestFunctional extends sfTestFunctional
  
     return $this;
   }
-    
+ 
   public function getJobByPosition($position)
   {
     $q = Doctrine_Query::create()
@@ -43,18 +44,34 @@ class JobeetTestFunctional extends sfTestFunctional
     
   public function loadData()
   {
-    Doctrine_Core::loadData('/home/dave/jobeet/test/fixtures');
- 
+    Doctrine_Core::loadData(sfConfig::get('sf_test_dir').'/fixtures');
+    //Doctrine_Core::loadData('/home/dave/jobeet/test/fixtures');  
     return $this;
   }
  
   public function getMostRecentProgrammingJob()
   {
-    $q = Doctrine_Query::create()
+    /**
+     * ez volt
+     * 
+     * $q = Doctrine_Query::create()
       ->select('j.*')
       ->from('JobeetJob j')
       ->leftJoin('j.JobeetCategory c')
       ->where('c.slug = ?', 'programming');
+    $q = Doctrine_Core::getTable('JobeetJob')->addActiveJobsQuery($q);
+ 
+    return $q->fetchOne();
+     */
+      
+    //javítva : 
+      
+    $q = Doctrine_Query::create()
+      ->select('j.*')
+      ->from('JobeetJob j')
+      ->leftJoin('j.JobeetCategory c')
+      ->leftJoin('c.Translation t')
+      ->where('t.slug = ?', 'programming');
     $q = Doctrine_Core::getTable('JobeetJob')->addActiveJobsQuery($q);
  
     return $q->fetchOne();

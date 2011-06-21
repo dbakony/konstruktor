@@ -7,7 +7,7 @@ $browser->loadData();
  
 $browser->
   info('1 - Authentication')->
-  get('/affiliate')->
+  get('affiliate')->
   click('Signin', array(
     'signin' => array('username' => 'dave', 'password' => 'qwqwqw'),
     array('_with_csrf' => true)

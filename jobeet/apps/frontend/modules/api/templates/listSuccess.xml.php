@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<xml version="1.0" encoding="utf-8">
 <jobs>
 <?php foreach ($jobs as $url => $job): ?>
   <job url="<?php echo $url ?>">
@@ -8,3 +8,4 @@
   </job>
 <?php endforeach ?>
 </jobs>
+</xml>

@@ -4,8 +4,7 @@ include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
 $browser = new sfTestFunctional(new sfBrowser());
 
-$browser->
-  get('/language/index')->
+$browser->get('language')->
 
   with('request')->begin()->
     isParameter('module', 'language')->
@@ -13,7 +12,7 @@ $browser->
   end()->
 
   with('response')->begin()->
-    isStatusCode(200)->
+    //isStatusCode(200)->
     checkElement('body', '!/This is a temporary page/')->
   end()
 ;

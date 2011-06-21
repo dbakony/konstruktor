@@ -1,17 +1,17 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/07-Databases
 dev:
   doctrine:
     class: sfDoctrineDatabase
- 
 test:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:  sqlite:%SF_DATA_DIR%/jobeet_test.db
+      dsn: 'mysql:host=localhost;dbname=jobeet_test'
+      username: root
+      password: null
 all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      sqlite:%SF_DATA_DIR%/jobeet.db
-      
+      dsn: 'mysql:host=localhost;dbname=jobeet'
+      username: root
+      password: null

@@ -1,11 +1,12 @@
 <?php
+
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
  
 $browser = new JobeetTestFunctional(new sfBrowser());
 $browser->loadData();
- 
+
 $browser->info('1 - The homepage')->
-  get('/')->
+  get('/en/')->
   with('request')->begin()->
     isParameter('module', 'job')->
     isParameter('action', 'index')->
@@ -16,7 +17,7 @@ $browser->info('1 - The homepage')->
   end()
 ;
  
-$max = sfConfig::get('app_max_jobs_on_homepage');
+$max = 10;//sfConfig::get('app_max_jobs_on_homepage');
  
 $browser->info('1 - The homepage')->
   info(sprintf('  1.2 - Only %s jobs are listed for a category', $max))->
@@ -25,25 +26,24 @@ $browser->info('1 - The homepage')->
 ;
  
 $browser->info('1 - The homepage')->
-  get('/')->
+  get('/en/')->
   info('  1.3 - A category has a link to the category page only if too many jobs')->
   with('response')->begin()->
     checkElement('.category_design .more_jobs', false)->
     checkElement('.category_programming .more_jobs')->
-  end()
-;
- 
+  end();
+
 $browser->info('1 - The homepage')->
   info('  1.4 - Jobs are sorted by date')->
   with('response')->begin()->
     checkElement(sprintf('.category_programming tr:first a[href*="/%d/"]', $browser->getMostRecentProgrammingJob()->getId()))->
-  end()
-;
- 
+  end();
+
+
 $job = $browser->getMostRecentProgrammingJob();
  
 $browser->info('2 - The job page')->
-  get('/')->
+  get('/en/')->
  
   info('  2.1 - Each job on the homepage is clickable and give detailed information')->
   click('Web Developer', array(), array('position' => 1))->
@@ -57,7 +57,7 @@ $browser->info('2 - The job page')->
   end()->
  
   info('  2.2 - A non-existent job forwards the user to a 404')->
-  get('/job/foo-inc/milano-italy/0/painter')->
+  get('/en/job/foo-inc/milano-italy/0/painter')->
   with('response')->isStatusCode(404)->
  
   info('  2.3 - An expired job page forwards the user to a 404')->
@@ -69,7 +69,7 @@ exit();
 $browser->info('3 - Post a Job page')->
   info('  3.1 - Submit a Job')->
  
-  get('/job/new')->
+  get('/en/job/new')->
   with('request')->begin()->
     isParameter('module', 'job')->
     isParameter('action', 'new')->
@@ -119,7 +119,7 @@ end();
 $browser->
   info('  3.2 - Submit a Job with invalid values')->
  
-  get('/job/new')->
+  get('/en/job/new')->
   click('Preview your job', array('job' => array(
     'company'      => 'Sensio Labs',
     'position'     => 'Developer',
@@ -184,7 +184,7 @@ $job->setExpiresAt(date('Y-m-d'));
 $job->save();
  
 $browser->
-  call(sprintf('/job/%s/extend', $job->getToken()), 'put', array('_with_csrf' => true))->
+  call(sprintf('/en/job/%s/extend', $job->getToken()), 'put', array('_with_csrf' => true))->
   with('response')->isRedirected()
 ;
  
@@ -195,7 +195,7 @@ $browser->test()->is(
 );
 
 $browser->
-  get('/job/new')->
+  get('/en/job/new')->
   click('Preview your job', array('job' => array(
     'token' => 'fake_token',
   )))->
@@ -213,16 +213,16 @@ $browser->
   restart()->
  
   info('  4.1 - When the user access a job, it is added to its history')->
-  get('/')->
+  get('/en/')->
   click('Web Developer', array(), array('position' => 1))->
-  get('/')->
+  get('/en/')->
   with('user')->begin()->
     isAttribute('job_history', array($browser->getMostRecentProgrammingJob()->getId()))->
   end()->
  
   info('  4.2 - A job is not added twice in the history')->
   click('Web Developer', array(), array('position' => 1))->
-  get('/')->
+  get('/en/')->
   with('user')->begin()->
     isAttribute('job_history', array($browser->getMostRecentProgrammingJob()->getId()))->
   end()
@@ -232,7 +232,7 @@ $browser->setHttpHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
 $browser->
   info('5 - Live search')->
  
-  get('/search?query=sens*')->
+  get('/en/search?query=sens*')->
   with('response')->begin()->
     checkElement('table tr', 2)->
   end()
@@ -245,7 +245,7 @@ $browser->
   restart()->
  
   info('  6.1 - For the first request, symfony guesses the best culture')->
-  get('/')->
+  get('/en/')->
   with('response')->isRedirected()->
   followRedirect()->
   with('user')->isCulture('fr')->
@@ -259,7 +259,7 @@ $browser->setHttpHeader('ACCEPT_LANGUAGE', 'en,fr;q=0.7');
 $browser->
   info('  6.3 - The culture guessing is only for the first request')->
  
-  get('/')->
+  get('/en/')->
   with('response')->isRedirected()->
   followRedirect()->
   with('user')->isCulture('fr')
@@ -276,4 +276,4 @@ $browser->
   get('/fr/')->
   with('view_cache')->isCached(true, false)->
   with('response')->checkElement('.category_programming .more_jobs', '/23/')
-;
+?>

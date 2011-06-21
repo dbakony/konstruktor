@@ -21,7 +21,7 @@ $browser->
   with('request')->isFormat('xml')->
   with('response')->begin()->
     isValid()->
-    checkElement('job', 32)->
+    checkElement('job', 20)->
   end()->
  
   info('3 - The web service supports the JSON format')->
